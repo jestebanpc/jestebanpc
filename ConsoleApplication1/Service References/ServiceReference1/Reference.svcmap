@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3bdfc5d5-c215-4f4e-b2d6-3d195c99fe1d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://fe.cl.dbnetcorp.com/DTEWSS_V4/wssCustomerETDPDF/CustomerETDPDF.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomerETDPDF.wsdl" MetadataType="Wsdl" ID="7f7d5ff3-084f-440f-b82d-8efea5b6ddc6" SourceId="1" SourceUrl="https://fe.cl.dbnetcorp.com/DTEWSS_V4/wssCustomerETDPDF/CustomerETDPDF.asmx?wsdl" />
+    <MetadataFile FileName="CustomerETDPDF.disco" MetadataType="Disco" ID="9c699d8a-6a77-41ad-9177-723e671654c5" SourceId="1" SourceUrl="https://fe.cl.dbnetcorp.com/DTEWSS_V4/wssCustomerETDPDF/CustomerETDPDF.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

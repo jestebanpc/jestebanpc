@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.dbnet.cl/getPDF64" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.dbnet.cl/getPDF64" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.dbnet.cl/getPDF64">
+      <s:element name="get_pdf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rutt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="folio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="monto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruttt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Merito" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_pdfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_pdfResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="get_pdf_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRutt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFolio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMonto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRuttt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bMerito" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_pdf_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_pdf_sucursalResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="get_pdfSoapIn">
+    <wsdl:part name="parameters" element="tns:get_pdf" />
+  </wsdl:message>
+  <wsdl:message name="get_pdfSoapOut">
+    <wsdl:part name="parameters" element="tns:get_pdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_pdf_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:get_pdf_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="get_pdf_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:get_pdf_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="getPDF64Soap">
+    <wsdl:operation name="get_pdf">
+      <wsdl:input message="tns:get_pdfSoapIn" />
+      <wsdl:output message="tns:get_pdfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_pdf_sucursal">
+      <wsdl:input message="tns:get_pdf_sucursalSoapIn" />
+      <wsdl:output message="tns:get_pdf_sucursalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getPDF64Soap" type="tns:getPDF64Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_pdf">
+      <soap:operation soapAction="http://www.dbnet.cl/getPDF64/get_pdf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_pdf_sucursal">
+      <soap:operation soapAction="http://www.dbnet.cl/getPDF64/get_pdf_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="getPDF64Soap12" type="tns:getPDF64Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_pdf">
+      <soap12:operation soapAction="http://www.dbnet.cl/getPDF64/get_pdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_pdf_sucursal">
+      <soap12:operation soapAction="http://www.dbnet.cl/getPDF64/get_pdf_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getPDF64">
+    <wsdl:port name="getPDF64Soap" binding="tns:getPDF64Soap">
+      <soap:address location="https://fe.cl.dbnetcorp.com/DTEWSS_V4/wssCustomerETDPDF/CustomerETDPDF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="getPDF64Soap12" binding="tns:getPDF64Soap12">
+      <soap12:address location="https://fe.cl.dbnetcorp.com/DTEWSS_V4/wssCustomerETDPDF/CustomerETDPDF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
